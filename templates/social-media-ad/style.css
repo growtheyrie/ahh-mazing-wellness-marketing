@@ -1,0 +1,30 @@
+.image-container {
+     width: 1280px;
+     height: 853px;
+     background-image: url('https://respec.sirv.com/Ahh-mazing_Wellness_Marketing_Assets/Backgrounds/starbucks-coffee.jpg');
+     background-size: cover;
+     background-position: center;
+     position: relative;
+}
+ .name-overlay {
+     position: absolute;
+     font-family: 'Permanent Marker', cursive;
+     font-size: 30px;
+     color: black;
+     transform: translate(-50%, -50%) rotate(-12deg);
+     padding: 2px 8px;
+     border-radius: 3px;
+     opacity: 0.6;
+     transition: opacity 0.3s ease;
+}
+ .name-overlay.has-content {
+     opacity: 1;
+}
+ .name-left {
+     top: 58%;
+     left: 18%;
+}
+ .name-right {
+     top: 50%;
+     left: 48%;
+}
