@@ -4,72 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloudflare Live Preview</title>
-    <style>
-        .image-container {
-            width: 1280px;
-            height: 853px;
-            background-image: url('https://respec.sirv.com/Ahh-mazing_Wellness_Marketing_Assets/Backgrounds/starbucks-coffee.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .name-overlay {
-            position: absolute;
-            font-family: 'Permanent Marker', cursive;
-            font-size: 30px;
-            color: black;
-            transform: translate(-50%, -50%) rotate(-12deg);
-            padding: 2px 8px;
-            border-radius: 3px;
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
-        }
-
-        .name-overlay.has-content {
-            opacity: 1;
-        }
-
-        .name-left {
-            top: 58%;
-            left: 18%;
-        }
-
-        .name-right {
-            top: 50%;
-            left: 48%;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="image-container">
         <div class="name-overlay name-left">Enter left name</div>
         <div class="name-overlay name-right">Enter right name</div>
     </div>
-
-    <script>
-        const nameLeft = document.querySelector(".name-left");
-        const nameRight = document.querySelector(".name-right");
-
-        function updateOverlay(element, value, defaultText) {
-            if (value && value.trim()) {
-                element.textContent = value;
-                element.classList.add("has-content");
-            } else {
-                element.textContent = defaultText;
-                element.classList.remove("has-content");
-            }
-        }
-
-        window.addEventListener("message", (event) => {
-            if (event.data.type === "update-variables") {
-                const { name_left, name_right } = event.data.data;
-                updateOverlay(nameLeft, name_left, "Enter left name");
-                updateOverlay(nameRight, name_right, "Enter right name");
-            }
-        });
-
-        window.parent.postMessage("iframe-ready", "*");
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
