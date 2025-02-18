@@ -1,6 +1,7 @@
 const nameLeft = document.querySelector(".name-left");
 const nameRight = document.querySelector(".name-right");
 
+// Update overlay text and styling
 function updateOverlay(element, value, defaultText) {
     if (value && value.trim()) {
         element.textContent = value;
@@ -11,6 +12,7 @@ function updateOverlay(element, value, defaultText) {
     }
 }
 
+// Handle incoming messages
 window.addEventListener("message", (event) => {
     if (event.data.type === "update-variables") {
         const { name_left, name_right } = event.data.data;
