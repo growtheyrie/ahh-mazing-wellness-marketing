@@ -14,7 +14,7 @@ function updateOverlay(element, value, defaultText) {
 
 // Handle incoming messages
 window.addEventListener("message", (event) => {
-    if (event.data.type === "update-variables") {
+    if (event.data.type === "update-layers") {
         const { name_left, name_right } = event.data.data;
         updateOverlay(nameLeft, name_left, "Enter left name");
         updateOverlay(nameRight, name_right, "Enter right name");
